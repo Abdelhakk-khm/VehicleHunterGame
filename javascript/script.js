@@ -10,7 +10,7 @@ const recordEl=document.getElementById('record')
 
 //variables
 let interval = null
-let seconds = 20
+let seconds = 15
 let record=0
 let score = 0
 let selected_vehicule ={}
@@ -59,12 +59,12 @@ function catchVehicule(){
     addVehicules()
 }
 function addVehicules() {
-    if(nb < 10 ) {
-        setTimeout(createVehicule,500)
-        setTimeout(createVehicule,800)
+    if(nb < 5 ) {
+        setTimeout(createVehicule,400)
+        setTimeout(createVehicule,600)
         nb+=2
     } else {
-        setTimeout(createVehicule,500)
+        setTimeout(createVehicule,300)
     }
 }
 function getRandomLocation() {
@@ -115,12 +115,12 @@ function increaseScore () {
     score++
     scoreEl.innerHTML = `Score: ${score}`
     if(score > 10 && score< 20) {
-        timePath = 400
+        timePath = 350
         clearInterval(interval)
         interval =setInterval(decreaseTime, timePath)
     } 
     if(score > 20 && score< 30) {
-        timePath = 300
+        timePath = 250
         clearInterval(interval)
         interval =setInterval(decreaseTime, timePath)
     } 
@@ -130,7 +130,7 @@ function increaseScore () {
         interval =setInterval(decreaseTime, timePath)
     } 
     if(score > 40) {
-        timePath = 100
+        timePath = 150
         clearInterval(interval)
         interval =setInterval(decreaseTime, timePath)
     } 
